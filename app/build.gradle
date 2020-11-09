@@ -55,6 +55,7 @@ dependencies {
     implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
     implementation 'com.borjabravo:readmoretextview:2.0.1'
 
-
+//paypal
+    implementation 'com.paypal.sdk:paypal-android-sdk:2.14.2'
 
 }

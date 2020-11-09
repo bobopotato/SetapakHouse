@@ -95,6 +95,15 @@ class detailPost : AppCompatActivity() {
                 if(snapshot.exists()){
                     for(h in snapshot.children){
                         if(h.child("propertyID").getValue().toString().equals(selectedPropertyID)){
+                            if(h.child("status").getValue().toString().equals("available")){
+                                if(selectedUserID.equals(currentUserID)) {
+                                    requestBtn.visibility = View.INVISIBLE
+                                }else{
+                                    requestBtn.visibility = View.VISIBLE
+                                }
+                            }else{
+                                requestBtn.visibility = View.INVISIBLE
+                            }
                             if(h.child("rentalType").getValue().toString().equals("long")){
                                 txtPrice.text="RM"+h.child("price").getValue().toString()+"/MONTH"
                             }else{
@@ -102,7 +111,7 @@ class detailPost : AppCompatActivity() {
                             }
 
                             txtPropertyType.text="Property Type: "+h.child("propertyType").getValue().toString()
-                            txtRentalType.text="Rental Type: "+h.child("rentalType").getValue().toString()+" term"
+                            txtRentalType.text="Rental Type: "+h.child("rentalType").getValue().toString()
                             txtPropertyName.text="Property Name: "+h.child("propertyName").getValue().toString()
                             txtLocation.text=h.child("location").getValue().toString()
 
@@ -117,7 +126,7 @@ class detailPost : AppCompatActivity() {
                                         if(snapshot.exists()){
                                             for(h in snapshot.children){
                                                 if(h.child("propertyID").getValue().toString().equals(selectedPropertyID)){
-                                                    txtDetail.text="Room Type : "+h.child("roomType").getValue().toString()+"\nMaximum Occupancy : "+h.child("capacity").getValue().toString()
+                                                    txtDetail.text="Room Type : "+h.child("roomType").getValue().toString()+"\nMaximum Occupancy : "+h.child("maxOccupancy").getValue().toString()
                                                 }
                                             }
                                         }
@@ -186,7 +195,7 @@ class detailPost : AppCompatActivity() {
                     var total:Double=0.0
                     reviewList.clear()
                     for(h in snapshot.children){
-                        if(h.child("propertyID").getValue().toString().equals(selectedPropertyID)){
+                        if(h.child("propertyID").getValue().toString().equals(selectedPropertyID)&&h.child("status").getValue().toString().equals("completed")){
                             val review = h.getValue(Review::class.java)
                             reviewList.add(review!!)
 
