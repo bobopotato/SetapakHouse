@@ -28,72 +28,38 @@
             </ImageView>
 
             <TextView
+                android:id="@+id/txtPropertyName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_below="@+id/imgProperty"
+                android:layout_marginTop="4dp"
+                android:text="PropertyName"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_marginLeft="20dp"
                 android:id="@+id/txtPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/imgProperty"
-                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/txtPropertyName"
                 android:layout_marginTop="12dp"
                 android:text="Price"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
-
             <TextView
-                android:id="@+id/txtPropertyName"
+                android:id="@+id/durationTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtPrice"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="4dp"
-                android:text="PropertyName"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/txtPropertyType"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txtPropertyName"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="4dp"
-                android:text="PropertyType"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txtRentalType"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txtPropertyType"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="4dp"
-                android:text="RentalType"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="12dp"
+                android:text="Duration:11-11-11 to 11-11-11"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
 
-            <TextView
-                android:id="@+id/txtLocation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txtPropertyName"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginRight="10dp"
-                android:text="Address"/>
 
-            <Button
-                android:id="@+id/toReviewBtn"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/round_button_blue"
-                android:gravity="center"
-                android:layout_margin="10dp"
-                android:paddingHorizontal="10dp"
-                android:text="TO REVIEW"
-                android:textColor="#FFF"
-                android:layout_marginTop="20dp"
-                />
             <ImageView
                 android:id="@+id/imgViewLine"
                 android:layout_width="match_parent"

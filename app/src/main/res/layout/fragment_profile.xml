@@ -299,7 +299,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Manage House Renting"
+            android:text="House Renting"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
             android:textSize="18dp"
@@ -331,8 +331,10 @@
             android:layout_gravity="center_horizontal"/>
     </LinearLayout>
 
+
+
     <LinearLayout
-        android:id="@+id/rewardPoint"
+        android:id="@+id/myTransaction"
         android:layout_width="110dp"
         android:layout_height="130dp"
         android:layout_toRightOf="@id/myHouseRenting"
@@ -340,31 +342,6 @@
         android:layout_below="@id/reviewSection"
         android:layout_marginLeft="20dp"
         android:orientation="vertical">
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/rewardPointIcon"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_promotion"
-            android:layout_gravity="center_horizontal"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Reward Point History"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold"
-            android:textSize="18dp"
-            android:layout_gravity="center_horizontal"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/myTransaction"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical"
-        android:layout_below="@+id/myHouseRenting"
-        android:layout_marginTop="20dp">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/transactionIcon"
             android:layout_width="80dp"
@@ -375,7 +352,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="My Transaction"
+            android:text="Transaction"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
             android:textSize="18dp"

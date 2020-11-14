@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.setapakhouse.Model.Property
+import com.example.setapakhouse.Model.PropertyImage
 import com.example.setapakhouse.R
 import com.example.setapakhouse.detailPost
 import com.google.firebase.database.*
@@ -78,6 +79,7 @@ class HomeAdapter(val property : MutableList<Property>): RecyclerView.Adapter<Ho
 
         })
 
+        var imageList= mutableListOf<PropertyImage>()
         ref=FirebaseDatabase.getInstance().getReference("PropertyImage")
         ref.addValueEventListener(object:ValueEventListener{
             override fun onCancelled(error: DatabaseError) {
@@ -86,11 +88,15 @@ class HomeAdapter(val property : MutableList<Property>): RecyclerView.Adapter<Ho
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()){
-
+                    imageList.clear()
                     for(h in snapshot.children){
                         if(h.child("propertyID").getValue().toString().equals(property[position].propertyID) && h.child("imageName").getValue().toString().equals("image1")){
-                            Picasso.get().load(h.child("imageSource").getValue().toString()).placeholder(R.drawable.ic_home).into(holder.img_property)
+                            val propertyImage=h.getValue(PropertyImage::class.java)
+                            imageList.add(propertyImage!!)
                         }
+                    }
+                    for(i in imageList){
+                        Picasso.get().load(i.imageSource).placeholder(R.drawable.ic_home).into(holder.img_property)
                     }
                 }
             }
